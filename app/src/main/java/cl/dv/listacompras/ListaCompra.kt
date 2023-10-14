@@ -3,40 +3,96 @@ package cl.dv.listacompras
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import cl.dv.listacompras.adapter.comprasAdapter
-import cl.dv.listacompras.databinding.ActivityListaCompraBinding
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import cl.dv.listacompras.Entidad.Producto
+import cl.dv.listacompras.adapter.compraDetalle
+import cl.dv.listacompras.adapter.listaCompraAdapter
 
 class ListaCompra : AppCompatActivity() {
 
-    private lateinit var binding: ActivityListaCompraBinding
+    private lateinit var listviewCompras: ListView
+    private  var listOption: Boolean = true
+    private var detailOption: Boolean = false
+    private lateinit var productos: MutableList<Producto>
+    private lateinit var adapterProductos: listaCompraAdapter
+    private lateinit var adapter : ArrayAdapter<Producto>
+
+    companion object{
+        const val REQUEST_REGISTER = 1
+        const val REQUEST_EDITER = 2
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityListaCompraBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        initRecyclerView()
+        setContentView(R.layout.activity_lista_compra)
 
-        val agregarNavigation = findViewById<Button>(R.id.agregarButton)
+        listviewCompras = findViewById(R.id.listViewProductos)
 
-        agregarNavigation.setOnClickListener{
-            val intentAbout = Intent(this, AgregarItem_Compra::class.java)
-            startActivity(intentAbout)
+        productos = mutableListOf(
+            Producto("Pan", "Marraqueta", 6, 400),
+            Producto("Coca-Cola", "1.5lt", 1, 1500),
+            Producto("Jamon", "Pavo", 6, 150),
+            Producto("Queso", "Gauda", 6, 250)
+
+        )
+
+        adapter = ArrayAdapter<Producto>(this, android.R.layout.simple_list_item_1, productos)
+
+        listviewCompras.adapter = adapter
+
+        listviewCompras.setOnItemClickListener{ _, _, posicion, _ ->
+            val productoSeleccionado = productos[posicion]
+            listOption = !listOption
+            if (detailOption){
+                mostrarProductoDetalle(productoSeleccionado)
+            }
+            else{
+                val intent = Intent(this, DetalleProducto::class.java)
+                intent.putExtra("Producto", productoSeleccionado)
+                startActivity(intent)
+            }
         }
-
     }
 
-    private fun initRecyclerView(){
-        val manager = LinearLayoutManager(this)
-
-        val decoration = DividerItemDecoration(this, manager.orientation)
-
-        binding.recyclerCompras.layoutManager = manager
-        binding.recyclerCompras.adapter = comprasAdapter(comprasProvider.compraList)
-        binding.recyclerCompras.addItemDecoration(decoration)
+    fun changeAdapter(view: View){
+        if(listOption){
+            adapterProductos = listaCompraAdapter(this, R.layout.activity_detalle_producto, productos)
+            listviewCompras.adapter = adapterProductos
+        }else{
+            adapter = ArrayAdapter<Producto>(this, android.R.layout.simple_list_item_1, productos)
+            listviewCompras.adapter = adapter
+        }
+        listOption = !listOption
     }
+
+    fun crearProducto(view: View){
+        val intent = Intent(this, AgregarItem_Compra::class.java)
+        startActivityForResult(intent, REQUEST_REGISTER)
+    }
+
+    private fun mostrarProductoDetalle(producto: Producto){
+        val dialog = compraDetalle(this, producto)
+        dialog.show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_REGISTER && resultCode == RESULT_OK) {
+            val nuevoProducto = data?.getParcelableExtra<Producto>("new")
+            if (nuevoProducto != null) {
+                productos.add(nuevoProducto)
+                if (listOption) {
+
+                }
+                adapterProductos.notifyDataSetChanged()
+            }
+        }
+    }
+
 
 }
 
