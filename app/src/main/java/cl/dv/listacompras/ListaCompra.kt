@@ -21,7 +21,6 @@ class ListaCompra : AppCompatActivity() {
 
     companion object{
         const val REQUEST_REGISTER = 1
-        const val REQUEST_EDITER = 2
     }
 
 
@@ -39,9 +38,9 @@ class ListaCompra : AppCompatActivity() {
 
         )
 
-        adapter = ArrayAdapter<Producto>(this, android.R.layout.simple_list_item_1, productos)
+        adapterProductos = listaCompraAdapter(this, R.layout.item_compras, productos)
 
-        listviewCompras.adapter = adapter
+        listviewCompras.adapter = adapterProductos
 
         listviewCompras.setOnItemClickListener{ _, _, posicion, _ ->
             val productoSeleccionado = productos[posicion]
@@ -55,17 +54,6 @@ class ListaCompra : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-    }
-
-    fun changeAdapter(view: View){
-        if(listOption){
-            adapterProductos = listaCompraAdapter(this, R.layout.activity_detalle_producto, productos)
-            listviewCompras.adapter = adapterProductos
-        }else{
-            adapter = ArrayAdapter<Producto>(this, android.R.layout.simple_list_item_1, productos)
-            listviewCompras.adapter = adapter
-        }
-        listOption = !listOption
     }
 
     fun crearProducto(view: View){

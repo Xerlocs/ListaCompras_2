@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import cl.dv.listacompras.Entidad.Producto
 
 class DetalleProducto : AppCompatActivity() {
@@ -28,6 +29,16 @@ class DetalleProducto : AppCompatActivity() {
             producto = intent.getParcelableExtra("Producto", Producto::class.java) ?: Producto("", "", 0, 0)
         }else{
             producto = intent.getParcelableExtra("Producto") ?: Producto("", "", 0, 0)
+        }
+
+        if (producto != null) {
+            textNombre.text = producto.nombre
+            textEspecificaion.text = producto.especificacion
+            textCantidad.setText(producto.cantidad.toString())
+            textPrecio.setText(producto.precio.toString())
+        }
+            textNombre.setOnClickListener(){
+            Toast.makeText(this, producto.nombre, Toast.LENGTH_LONG).show()
         }
     }
 }

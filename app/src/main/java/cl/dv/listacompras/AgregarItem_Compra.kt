@@ -5,35 +5,39 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import cl.dv.listacompras.Entidad.Producto
 
 class AgregarItem_Compra : AppCompatActivity() {
+
+    private lateinit var Nombre: EditText
+    private lateinit var Especificacion: EditText
+    private lateinit var Cantidad: EditText
+    private lateinit var Precio: EditText
+    private lateinit var AgregarButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_item_compra)
 
-        var campoNombre:EditText = findViewById<EditText?>(R.id.editNombre)
-        var campoEspecificacion:EditText = findViewById(R.id.editEspecificacion)
-        var campoCantidad:EditText = findViewById(R.id.editCantidad)
-        var campoPrecio:EditText = findViewById(R.id.editPrecio)
+        Nombre = findViewById(R.id.editNombre)
+        Especificacion = findViewById(R.id.editEspecificacion)
+        Cantidad = findViewById(R.id.editCantidad)
+        Precio = findViewById(R.id.editPrecio)
+        AgregarButton = findViewById(R.id.confirmarButton)
 
-        var cantidad:String = campoCantidad.text.toString()
-        var precio:String = campoPrecio.text.toString()
+        AgregarButton.setOnClickListener{
 
-        val regresarCompra = findViewById<Button>(R.id.confirmarButton)
+            val nombre = Nombre.text.toString()
+            val especificaion = Especificacion.text.toString()
+            val cantidad = Cantidad.text.toString().toIntOrNull() ?: 0
+            val precio = Precio.text.toString().toIntOrNull() ?: 0
 
-        regresarCompra.setOnClickListener{
+            val producto = Producto(nombre, especificaion, cantidad, precio)
 
-            var nombre:String = campoNombre.text.toString()
-            var especificacion:String = campoEspecificacion.text.toString()
-            var intCantidad: Int = Integer.parseInt(cantidad)
-            var intPrecio: Int = Integer.parseInt(precio)
-
-            var tamano: Int = Integer.parseInt(comprasProvider.compraList.size.toString()) + 1
-
-            comprasProvider.compraList.add(tamano, Compras(nombre, especificacion, intCantidad, intPrecio))
-
-            val intentAbout = Intent(this, ListaCompra::class.java)
-            startActivity(intentAbout)
+            val resultIntent = Intent()
+            resultIntent.putExtra("new", producto)
+            setResult(RESULT_OK, resultIntent)
+            finish()
         }
     }
 }
