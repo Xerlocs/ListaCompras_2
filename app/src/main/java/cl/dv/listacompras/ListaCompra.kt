@@ -80,7 +80,4 @@ class ListaCompra : AppCompatActivity() {
     }
 }
 
-//Listar las cosas a comprar
-
-//Boton para agregar cosas a comprar
 

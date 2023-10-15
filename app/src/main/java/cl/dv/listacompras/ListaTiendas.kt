@@ -25,9 +25,9 @@ class ListaTiendas : AppCompatActivity() {
         listviewTiendas = findViewById(R.id.listViewTiendas)
 
         tiendas = mutableListOf(
-            Tienda("Jumbo", "Marraqueta"),
-            Tienda("Jumbo", "Marraqueta"),
-            Tienda("Jumbo", "Marraqueta"),
+            Tienda("Jumbo", "El Arenal 441, Talca", "Lunes a sábado 8:00 – 21:00"),
+            Tienda("Tottus", "Calle Cuatro Norte 1530, Talca", "Lunes a Domingo 08:30 a 21:30 hrs"),
+            Tienda("aCuenta", "Av. 1 Oriente 323", "Lunes a sábado 8:00 – 21:30")
         )
 
         adapterTienda = listaTiendaAdapter(this, R.layout.item_tiendas, tiendas)

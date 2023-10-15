@@ -26,6 +26,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intentAbout)
         }
 
+        //Tiendas
+        val tiendaNavigation = findViewById<Button>(R.id.tiendasButton)
+
+        tiendaNavigation.setOnClickListener{
+            val intentAbout = Intent(this, ListaTiendas::class.java)
+            startActivity(intentAbout)
+        }
+
     }
 }
 
