@@ -1,0 +1,29 @@
+<!-- dialog_patient_detail.xml -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Nombre_ejemplo"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewEspec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Ubicacion_ejemplo" />
+
+    <Button
+        android:id="@+id/buttonRegresar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Regresar" />
+</LinearLayout>

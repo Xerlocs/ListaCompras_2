@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import cl.dv.listacompras.Entidad.Producto
 import cl.dv.listacompras.adapter.compraDetalle
@@ -17,7 +16,6 @@ class ListaCompra : AppCompatActivity() {
     private var detailOption: Boolean = false
     private lateinit var productos: MutableList<Producto>
     private lateinit var adapterProductos: listaCompraAdapter
-    private lateinit var adapter : ArrayAdapter<Producto>
 
     companion object{
         const val REQUEST_REGISTER = 1
@@ -80,8 +78,6 @@ class ListaCompra : AppCompatActivity() {
             }
         }
     }
-
-
 }
 
 //Listar las cosas a comprar

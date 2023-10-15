@@ -6,6 +6,7 @@
     <string name="Lugares">Locales de compra</string>
     <string name="Compras">Compras</string>
     <string name="Inventario">Inventario</string>
+    <string name="Tiendas">Tiendas</string>
 
     //Texto Splash
     <string name="Compañia">LircayHUB</string>
@@ -17,6 +18,7 @@
     <string name="Especificacion_ejemplo">Especificacion</string>
     <string name="Cantidad_ejemplo">Cantidad</string>
     <string name="Precio_ejemplo">PrecioBase</string>
+    <string name="Ubicacion_ejemplo">Ubicacion</string>
 
     //Extra
     <string name="Regresar">Regresar</string>

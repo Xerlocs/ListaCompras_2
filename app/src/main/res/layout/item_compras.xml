@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
@@ -32,6 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/MagicalMerlin"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/vacio"
@@ -43,16 +42,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cantidad"
+        android:textSize="17sp"
         android:textColor="@color/CoolBlue"
         app:layout_constraintStart_toEndOf="@+id/vacio"
         app:layout_constraintTop_toBottomOf="@+id/item_especificacion"
         tools:text="HOLA" />
 
-
     <TextView
         android:id="@+id/item_cantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
         android:textColor="@color/CoolBlue"
         app:layout_constraintStart_toEndOf="@+id/cantidad"
         app:layout_constraintTop_toBottomOf="@+id/item_especificacion"
@@ -63,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/precio"
+        android:textSize="17sp"
         android:textColor="@color/CoolBlue"
         app:layout_constraintRight_toLeftOf="@+id/item_precio"
         app:layout_constraintTop_toBottomOf="@+id/item_especificacion"
@@ -73,6 +74,7 @@
         android:id="@+id/item_precio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
         android:textColor="@color/CoolBlue"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_especificacion"
