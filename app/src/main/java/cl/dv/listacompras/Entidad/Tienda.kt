@@ -24,12 +24,12 @@ data class Tienda(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Producto> {
-        override fun createFromParcel(parcel: Parcel): Producto {
-            return Producto(parcel)
+    companion object CREATOR : Parcelable.Creator<Tienda> {
+        override fun createFromParcel(parcel: Parcel): Tienda {
+            return Tienda(parcel)
         }
 
-        override fun newArray(size: Int): Array<Producto?> {
+        override fun newArray(size: Int): Array<Tienda?> {
             return arrayOfNulls(size)
         }
     }
