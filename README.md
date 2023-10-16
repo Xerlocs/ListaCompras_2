@@ -19,7 +19,7 @@ Requerimientos no funcionales:
 - La aplicacion debe poseer un diseño atractivo e intuitivo
 - La aplicacion no debe poseer interrupciones
 
-Link Video:
+Link Video: https://youtu.be/fHesmJHsX28
 
 Link Presentacion: https://docs.google.com/presentation/d/1D0E-pgTZZdYYq71_gbZhJW10smKyFvKNlLOkbvjOibs/edit?usp=sharing
 
