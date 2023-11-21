@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">ListaCompras</string>
 
+    //toolbar
+    <string name="titulo_order">Ordenar por</string>
+    <string name="titulo_add">Añadir producto</string>
+
     //Nombre
     <string name="Main">Lista de compras</string>
     <string name="Lugares">Locales de compra</string>
