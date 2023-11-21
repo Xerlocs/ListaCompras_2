@@ -10,30 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Compras
-        val compraNavigation = findViewById<Button>(R.id.ComprasButton)
-
-        compraNavigation.setOnClickListener{
-            val intentAbout = Intent(this, ListaCompra::class.java)
-            startActivity(intentAbout)
-        }
-
-        //Inventario
-        val inventarioNavigation = findViewById<Button>(R.id.InventarioButton)
-
-        inventarioNavigation.setOnClickListener{
-            val intentAbout = Intent(this, Inventario::class.java)
-            startActivity(intentAbout)
-        }
-
-        //Tiendas
-        val tiendaNavigation = findViewById<Button>(R.id.tiendasButton)
-
-        tiendaNavigation.setOnClickListener{
-            val intentAbout = Intent(this, ListaTiendas::class.java)
-            startActivity(intentAbout)
-        }
-
     }
 }
 

@@ -22,40 +22,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171" />
 
-    <Button
-        android:id="@+id/ComprasButton"
-        android:layout_width="140dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="208dp"
-        android:text="@string/Compras"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/InventarioButton"
-        android:layout_width="137dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/Inventario"
-        android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ComprasButton" />
-
-    <Button
-        android:id="@+id/tiendasButton"
-        android:layout_width="137dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/Tiendas"
-        android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InventarioButton" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="140dp"
