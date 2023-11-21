@@ -5,13 +5,6 @@
     <string name="titulo_order">Ordenar por</string>
     <string name="titulo_add">Añadir producto</string>
 
-    //Nombre
-    <string name="Main">Lista de compras</string>
-    <string name="Lugares">Locales de compra</string>
-    <string name="Compras">Compras</string>
-    <string name="Inventario">Inventario</string>
-    <string name="Tiendas">Tiendas</string>
-
     //Texto Splash
     <string name="Compañia">LircayHUB</string>
     <string name="Nombre">Diego Valderrama</string>
@@ -24,10 +17,4 @@
     <string name="Precio_ejemplo">PrecioBase</string>
     <string name="Ubicacion_ejemplo">Ubicacion</string>
 
-    //Extra
-    <string name="Regresar">Regresar</string>
-    <string name="Sumar">+</string>
-    <string name="cantidad">Cantidad: </string>
-    <string name="precio">Precio: $</string>
-    <string name="agregar">Agregar Producto</string>
 </resources>
